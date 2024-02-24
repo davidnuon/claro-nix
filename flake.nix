@@ -17,10 +17,14 @@
       (pkgs.buildFHSUserEnv {
         name = "bazel-userenv-example";
         targetPkgs = pkgs: [
+          # Use Bazelisk to manage Bazel install
           pkgs.bazelisk
-          pkgs.jdk11
+
+          # Bazel depdencies
           pkgs.glibc
           pkgs.gcc
+
+          # Claro Java Depdencies
           pkgs.zlib.dev
           pkgs.zlib.out
         ];
