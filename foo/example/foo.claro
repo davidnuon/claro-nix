@@ -1,0 +1,11 @@
+resources::Input
+  |> files::readOrPanic(^)
+  |> strings::trim(^)
+  |> strings::toUpperCase(^)
+  |> wrapInBox(^)
+  |> print(^);
+
+function wrapInBox(s: string) -> string {
+  var line = strings::repeated("-", len(s) + 4);
+  return "{line}\n| {s} |\n{line}";
+}
