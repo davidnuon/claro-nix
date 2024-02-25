@@ -6,7 +6,7 @@ let
 
   pkgs = import unstableTarball {};
 in
-(pkgs.buildFHSUserEnv {
+(pkgs.buildFHSEnv {
   name = "bazel-userenv-example";
   targetPkgs = pkgs: [
     # Use Bazelisk to manage Bazel install
